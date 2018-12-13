@@ -13,7 +13,7 @@ module.exports = {
                 };
                 res.json(response);
             };
-        }.sort({title: -1}));
+        });
     },
 
     getOne: function(req, res) {
@@ -23,7 +23,7 @@ module.exports = {
                 console.log("There was an issue: ", error);
                 res.json(error);
             } else {
-                let repsonse = {
+                let response = {
                     message: "Success",
                     product: product
                 };
@@ -33,7 +33,7 @@ module.exports = {
     },
 
     create: function(req, res) {
-        let inc_pro = req.body['product'];
+        let inc_pro = req.body;
         let product = new Product(inc_pro);
         product.save(function(error, new_product) {
             if (error) {
@@ -42,7 +42,7 @@ module.exports = {
             } else {
                 let response = {
                     message: "Success",
-                    product = product
+                    product: product
                 };
                 res.json(response);
             };
@@ -51,14 +51,14 @@ module.exports = {
 
     update: function(req, res) {
         let pid = req.params.id;
-        let inc_pro = req.body['product'];
+        let inc_pro = req.body;
         let opts = {runValidators: true};
         Product.updateOne({_id: pid}, inc_pro, opts, function(error, product) {
             if (error) {
                 console.log("There was an issue: ", error);
                 res.json(error);
             } else {
-                let repsonse = {
+                let response = {
                     message: "Success",
                     product: product
                 };

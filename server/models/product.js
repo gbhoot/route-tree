@@ -4,7 +4,7 @@ var mongoose = require('../config/mongoose.js'),
 var ProductSchema = new mongoose.Schema({
     title: {type: String, required: true, minlength: 3},
     price: {type: Number, required: true, min: 0.01},
-    imgURL: {type: URL, required: true, validate: validators.isURL()}
+    imgURL: {type: String, required: true, validate: validators.isURL()}
 }, {timestamps: true});
 
 var Products = mongoose.model('Product', ProductSchema);
