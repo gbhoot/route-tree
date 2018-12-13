@@ -7,14 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ProductComponent implements OnInit {
-    randID: number;
     constructor() { }
 
     ngOnInit() {
-        this.randomizeID();
-    }
-
-    randomizeID() {
-        this.randID = Math.floor(Math.random() * 99) + 1;
     }
 }
