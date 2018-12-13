@@ -1,0 +1,30 @@
+<section class="bg-dark py-4">
+    <div class="row">
+        <div class="col text-center">
+            <h4 class="text-light">Products</h4>
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <div class="col text-center">
+            <a [routerLink]="['details', randID]"
+            class="btn btn-warning"
+            >Details</a>
+        </div>
+        <div class="col text-center">
+            <a [routerLink]="['brand', randID]"
+            class="btn btn-warning"
+            >Brand</a>
+        </div>
+        <div class="col text-center">
+            <a [routerLink]="['category', randID]"
+            class="btn btn-warning"
+            >Category</a>
+        </div>
+    </div>
+
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+
+</section>
